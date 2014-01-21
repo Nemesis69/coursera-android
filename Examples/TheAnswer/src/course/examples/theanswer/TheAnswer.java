@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import android.util.Log;
+import com.example.TheAnswer.R;
+
 public class TheAnswer extends Activity {
 
 	public static final int[] answers = { 42, -10, 0, 100, 1000 };
 	public static final int answer = 42;
+    private static final String TAG = "The answer";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +20,7 @@ public class TheAnswer extends Activity {
 		setContentView(R.layout.answer_layout);
 
 		TextView answerView = (TextView) findViewById(R.id.answer_view);
-
+        Log.i(TAG, "Printing the answer to life");
 		int val = findAnswer();
 		String output = (val == answer) ? "42" : "We may never know";
 		answerView
